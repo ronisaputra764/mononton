@@ -1,7 +1,19 @@
 import { forwardRef, useEffect, useImperativeHandle, useRef } from 'react';
-
+import "../../css/input.css";
 export default forwardRef(function TextInput(
-    { type = 'text', className = '', isFocused = false, ...props },
+    {
+        type = 'text',
+        className,
+        isFocused = false,
+        variant = 'primary',
+        name,
+        value,
+        defaultValue,
+        handleChange,
+        placeholder,
+        isError,
+        ...props
+    },
     ref,
 ) {
     const localRef = useRef(null);
@@ -18,13 +30,16 @@ export default forwardRef(function TextInput(
 
     return (
         <input
+            autoComplete=''
             {...props}
             type={type}
-            className={
-                'rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 ' +
-                className
-            }
+            name={name}
+            value={value}
+            className={`rounded-2xl bg-form-bg py-[13px] px-7 w-full ${isError && "input-error"} input-${variant} ${className}`}
             ref={localRef}
+            placeholder={placeholder}
+            variant={variant}
+            onChange={(e) => handleChange(e)}
         />
     );
 });
