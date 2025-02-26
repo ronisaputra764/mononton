@@ -15,5 +15,5 @@
 }
 
 .btn-white-outline {
-    @apply border border-white text-black;
+    @apply border border-[#F1F1F1] text-black;
 }
