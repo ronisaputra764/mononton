@@ -39,7 +39,7 @@ export default forwardRef(function TextInput(
             ref={localRef}
             placeholder={placeholder}
             variant={variant}
-            onChange={(e) => handleChange(e)}
+            // onChange={(e) => handleChange(e)}    
         />
     );
 });

@@ -1,6 +1,8 @@
 import { useState, useRef } from "react";
+import { Link } from "@inertiajs/react";
+import { route } from "ziggy-js";
 
-export default function Topbar() {
+export default function Topbar({user}) {
 
     const [showDropdown, setShowDropdown] = useState(true);
     const dropdownTarget = useRef();
@@ -20,7 +22,7 @@ export default function Topbar() {
             <div className="flex justify-between items-center cursor-pointer">
                 <input type="text" className="top-search bg-gray-500/50 border-none" placeholder="Search movie, cast, genre" />
                 <div className="flex items-center gap-4">
-                    <span className="text-white text-sm font-medium">Welcome, Granola Sky</span>
+                    <span className="text-white text-sm font-medium">Welcome, {user}</span>
                     <div className="collapsible-dropdown flex flex-col gap-2 relative">
                         <div
                             href="#!"
@@ -33,7 +35,7 @@ export default function Topbar() {
                             id="dropdown-target" ref={dropdownTarget}>
                             <a href="#!" className="transition-all hover:bg-sky-100 p-4">Dashboard</a>
                             <a href="#!" className="transition-all hover:bg-sky-100 p-4">Settings</a>
-                            <a href="sign_in.html" className="transition-all hover:bg-sky-100 p-4">Sign Out</a>
+                            <Link method="post" href={route('logout')} className="transition-all flex hover:bg-sky-100 p-4">Sign Out</Link>
                         </div>
                     </div>
                 </div>

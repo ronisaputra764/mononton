@@ -9,9 +9,9 @@ export default function InputLabel({
         <label
             {...props}
             htmlFor={forInput}
+            
             className={
-                `text-base block mb-2` +
-                className
+                `text-base block mb-2 ${className}`.trim()
             }
         >
             {value ? value : children}

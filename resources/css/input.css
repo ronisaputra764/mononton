@@ -1,5 +1,10 @@
 .input-primary {
     @apply focus:bg-form-bg py-[13px] focus:outline-alerange focus:outline-none;
+    @apply file:bg-alerange file:text-white file:rounded-md file:p-2;
+}
+
+.input-file {
+    @apply file:bg-alerange file:text-white file:rounded-md file:p-2;
 }
 
 .input-error {
@@ -9,4 +14,4 @@
 .input-primary-outline {
     @apply bg-[#fff] focus:bg-[#fff] border-alerange focus:border-alerange;
     @apply file:bg-alerange file:text-white file:rounded-md file:p-2;
-}
+}   

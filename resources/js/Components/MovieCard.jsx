@@ -1,4 +1,5 @@
 import { Link } from "@inertiajs/react";
+import { route } from "ziggy-js";
 
 export default function MovieCard({ slug, name, category, thumbnail }) {
     return (
@@ -16,7 +17,7 @@ export default function MovieCard({ slug, name, category, thumbnail }) {
                                 -translate-x-1/2 z-20 transition ease-in-out duration-500">
                 <img src="/icons/ic_play.svg" className="" width="50" alt="" />
             </div>
-            <Link href={route = `movie/${slug}`} className="inset-0 absolute z-50"></Link>
+            <Link href={route('user.dashboard.movie.show', slug)} className="inset-0 absolute z-50"></Link>
         </div >
     );
 }

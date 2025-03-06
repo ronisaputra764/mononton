@@ -1,9 +1,13 @@
 import Sidebar from "@/Layouts/Authenticated/Sidebar";
 import SubscriptionCard from "@/Components/SubscriptionCard";
+import { Head } from "@inertiajs/react";
 
 export default function Subscription() {
     return (
         <>
+            <Head>
+                <title>Subscription</title>
+            </Head>
             <Sidebar />
             <div className="ml-[300px] px-[50px]">
                 <div className="py-20 flex flex-col items-center">

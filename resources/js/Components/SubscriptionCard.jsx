@@ -25,7 +25,7 @@ export default function SubscriptionCard({ id, name, price, durationInMonth, fea
                         ))}
                     </div>
 
-                    <div>
+                    <div onClick={onSelectSubscription}>
                         <Button
                             type="button"
                             variant="white-outline"
@@ -67,7 +67,7 @@ export default function SubscriptionCard({ id, name, price, durationInMonth, fea
                             </div>
                         ))}
 
-                        <div>
+                        <div onClick={onSelectSubscription}>
                             <Button
                                 type="button"
                                 variant="primary"
